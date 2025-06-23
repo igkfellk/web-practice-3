@@ -13,7 +13,7 @@ body {
 
 body::before {
     content: ''; /* Обязательно для создания псевдоэлемента */
-    background-image: url(/media/background.png);
+    background-image: url(../media/background.png);
     background-repeat: no-repeat; /* Убираем повторение фона */
     background-size: cover; /* Масштабируем фон, сохраняя пропорции */
     background-position: center; /* Центрируем фон */
