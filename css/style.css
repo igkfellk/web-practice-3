@@ -1,0 +1,198 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 56px 80px;
+    background-color: #f8f9fa; /* Легкий фон для контраста */
+    position: relative; /* Для позиционирования псевдоэлемента */
+}
+
+body::before {
+    content: ''; /* Обязательно для создания псевдоэлемента */
+    background-image: url(/media/background.png);
+    background-repeat: no-repeat; /* Убираем повторение фона */
+    background-size: cover; /* Масштабируем фон, сохраняя пропорции */
+    background-position: center; /* Центрируем фон */
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.1; /* Прозрачность фона */
+    z-index: -1; /* Убираем позади других элементов */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0; /* Отступы в шапке */
+}
+
+.logo, 
+header nav a, 
+.hero-product-about, 
+.hero-product-additional-details, 
+.product-card figcaption {
+    color: #333; /* Темный цвет текста */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+header nav {
+    display: flex;
+    gap: 48px;
+    align-items: center;
+}
+
+header button,
+.hero-product-description button {
+    background: #333; /* Цвет кнопки */
+    color: white;
+    width: 99px;
+    height: 52px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background 0.3s; /* Плавный переход цвета кнопки */
+}
+
+header button:hover,
+.hero-product-description button:hover {
+    background: #555; /* Цвет кнопки при наведении */
+}
+
+.hero-product {
+    margin: 56px 0 80px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero-product-description {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 515px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
+.hero-product-description h2,
+.hero-product-price,
+.products h2,
+.footer-info h2 {
+    font-size: 24px;
+    line-height: 1.5;
+}
+
+.hero-product-description h2,
+.hero-product-about,
+.hero-product-additional-details,
+.product-card-about {
+    color: #828282; /* Цвет текста для описания */
+}
+
+.hero-product-description button {
+    width: auto; /* Нормализация ширины */
+}
+
+.hero-product-additional-details {
+    font-size: 16px;
+}
+
+.product-cards {
+    margin: 24px 0 120px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap; /* Строки отдельных карточек */
+}
+
+.product-card {
+    flex: 1 1 calc(33.333% - 32px); /* Ровное распределение карточек */
+    min-width: 250px; /* Минимальная ширина карточки */
+}
+
+.product-card figcaption {
+    margin-top: 24px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #E6E6E6;
+    padding-top: 48px;
+}
+
+.footer-links {
+    display: flex;
+    gap: 32px;
+}
+
+.footer-links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 187px;
+}
+
+.footer-links-list a,
+.footer-links h3 {
+    font-weight: 500;
+    line-height: 1.5;
+    color: #454545; /* Цвет текста ссылок */
+    text-decoration: none;
+}
+
+.footer-links h3 {
+    color: black; /* Цвет заголовка тем */
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column; /* Вертикальное выравнивание */
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.social-media img:hover {
+    filter: brightness(50%); /* Затемнение иконок при наведении */
+}
+
+/* Анимация карточек */
+.card {
+    transition: transform 0.3s, box-shadow 0.3s; /* Плавный переход */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Увеличение на 5% при наведении на карточку */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Эффект тени */
+}
+
+/* Адаптивные стили */
+@media (max-width: 576px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header nav {
+        margin-top: 20px;
+    }
+}
